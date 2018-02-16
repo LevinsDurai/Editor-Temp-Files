@@ -1,0 +1,28 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Zoho Desk Editor</title>
+	<script src="https://js.zohostatic.com/support/1316166/ZohoDeskEditorKernal.min.js"></script>
+	<script src="https://js.zohostatic.com/support/1316166/ZohoDeskEditorKernal.min.js"></script>
+</head>
+<body>
+	<div id="editorParent"></div>
+	<script>
+		function ZohoDesk_Editor_loadPage(cssPath,jsPath) {
+		    if(document.getElementById("editorParent").childElementCount ===0){
+		        ZohoDeskEditor_Init.init(cssPath,jsPath);
+		        ZohoDeskEditor.create({
+		            id: "editorParent",
+		        });
+		    }
+		}
+
+		function functionLoaderCheck(){
+		    if(ZohoDeskEditor_Init.init && ZohoDeskEditor.create){
+		        ZohoDesk_Editor_loadPage('https://localcss.zohostatic.com/support/1316166/css','https://localjs.zohostatic.com/support/1316166');
+		    }
+		}
+		functionLoaderCheck();
+	</script>
+</body>
+</html>
